@@ -1,8 +1,8 @@
-package com.company.chapter1;
+package com.example.stringEx;
 
 import java.util.Scanner;
 
-public class Ex1_5 {
+public class Ex5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String s = in.nextLine();

@@ -1,7 +1,7 @@
-package com.company.chapter1;
+package com.example.stringEx;
 import java.util.*;
 
-class Ex1_1 {
+class Ex1 {
     public static int solution(String str, char t) {
         int answer = 0;
         str = str.toUpperCase();

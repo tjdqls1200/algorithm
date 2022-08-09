@@ -1,8 +1,8 @@
-package com.company.chapter1;
+package com.example.stringEx;
 
 import java.util.Scanner;
 
-public class Ex1_2 {
+public class Ex2 {
 
     public static String solution(String str) {
         String answer = "";

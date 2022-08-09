@@ -1,8 +1,8 @@
-package com.company.chapter1;
+package com.example.stringEx;
 
 import java.util.Scanner;
 
-public class Ex1_3 {
+public class Ex3 {
     public static void main(String[] args) {
         Scanner kb = new Scanner(System.in);
         String str = kb.nextLine();

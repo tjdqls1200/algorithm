@@ -1,11 +1,10 @@
-package com.company;
+package com.example;
 import java.util.*;
 
 class Main {
     public String solution(String str) {
         str = str.toUpperCase().replaceAll("[^A-Z]", "");
         String temp = new StringBuilder(str).reverse().toString();
-
         if (!str.equals(temp)) return "NO";
 
         return "YES";
