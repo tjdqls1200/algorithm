@@ -5,30 +5,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
-public class stack1 {
+public class stack2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        char[] chars = br.readLine().trim().toCharArray();
-        System.out.println(solution(chars));
+        String s = br.readLine();
+
+        System.out.println(solution(s));
     }
 
-    // test commit log
-    //
-    private static String solution(char[] s) {
+    private static String solution(String s) {
         Stack<Character> stack = new Stack<>();
-        String answer = "NO";
-        for (char ch : s) {
+        StringBuilder sb = new StringBuilder();
+        for (char ch : s.toCharArray()) {
             if (ch == '(') {
                 stack.push(ch);
                 continue;
             }
-            if (stack.empty())
-                return answer;
-            stack.pop();
+            if (!stack.empty()) {
+                if (ch == ')')
+                    stack.pop();
+            } else {
+                sb.append(ch);
+            }
         }
-        if (stack.empty()) {
-            answer = "YES";
-        }
-        return answer;
+        return sb.toString();
     }
 }
