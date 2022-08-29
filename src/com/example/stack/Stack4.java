@@ -3,7 +3,7 @@ package com.example.stack;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class stack4 {
+public class Stack4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         char[] chars = sc.nextLine().toCharArray();
