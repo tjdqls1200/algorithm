@@ -9,7 +9,7 @@ public class 재귀_팩토리얼 {
 
         System.out.println(DFS(n));
     }
-
+//test
     private static int DFS(int n) {
         if (n == 0)
             return 1;
