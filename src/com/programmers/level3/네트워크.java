@@ -1,37 +1,30 @@
 package com.programmers.level3;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class 네트워크 {
-    static int L;
-    static boolean flag = false;
-    static int[][] ch;
+    static boolean[] network;
+    static int[][] computers;
 
-    public int solution(int n, int[][] computers) {
-        ch = new int[n][n];
-        L = 1;
+    public int solution(int n, int[][] computer) {
+        computers = computer;
+        network = new boolean[n];
+        int count = 0;
+
         for (int i = 0; i < n; i++) {
-            flag = false;
-            BFS(i, n, computers);
-            if (flag)
-                L++;
+            if (!network[i]) {
+                count++;
+            }
+            dfs(n, i);
         }
-        return L - 1;
+
+        return count;
     }
 
-    private static void BFS(int i, int n, int[][] computers) {
-        Queue<Integer> queue = new LinkedList<>();
-        queue.offer(i);
-        while (!queue.isEmpty()) {
-            int p = queue.poll();
-            for (int j = 0; j < n; j++) {
-                if (computers[p][j] == 1 && ch[p][j] == 0) {
-                    flag = true;
-                    ch[p][j] = L;
-                    ch[j][p] = L;
-                    queue.offer(j);
-                }
+    private void dfs(int n, int i) {
+        network[i] = true;
+
+        for (int j = 0; j < n; j++) {
+            if (!network[j] && computers[i][j] == 1) {
+                dfs(n, j);
             }
         }
     }
